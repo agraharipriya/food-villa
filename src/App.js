@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React from 'react';
+import Footer from './components/Footer'
+import Body from './components/Body';
+// default import
+import Header from './components/Header';
+// named import
+import { Title } from './components/Header';
+import ReactDOM  from 'react-dom/client'; 
+import { IMG_CDN_URL } from './config';
+  {/**
+      header
+       -logo
+       -nav items(right side)
+       -cart
+
+      body
+        -search bar
+        -restraunt list
+         -Restracard
+          -image
+          -name
+          -rating
+          -cusiness 
+
+          footer
+           -links
+           -copyright
+      **
+    */}
+
+
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+       <Header/>
+       <Body/>
+       <Footer/>
+    </>
   );
 }
 
