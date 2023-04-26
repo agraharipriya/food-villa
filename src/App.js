@@ -1,14 +1,14 @@
 
 import './App.css';
+import './components/Shimmer.css'
 import React from 'react';
 import Footer from './components/Footer'
 import Body from './components/Body';
 // default import
 import Header from './components/Header';
+import { createBrowserRouter } from 'react-router-dom';
 // named import
-import { Title } from './components/Header';
-import ReactDOM  from 'react-dom/client'; 
-import { IMG_CDN_URL } from './config';
+ 
   {/**
       header
        -logo
@@ -30,7 +30,11 @@ import { IMG_CDN_URL } from './config';
       **
     */}
 
-
+const appRouter=createBrowserRouter([
+  {
+    
+  }
+])
 function App() { 
   return (
     <>

@@ -1,20 +1,25 @@
-
-
+import Logo from "../assets/img/Swiggy_logo.svg.png"
+import { useEffect, useState } from "react";
+const loggedInUser =()=>{
+  // api call to check authentication
+  return true;
+};
  export const Title =()=>(
     <a href='/'>
    <img 
     className='logo' 
     alt="logo" 
-    src='https://lh3.googleusercontent.com/d0N_cxDlZmB_xdmn35isAxea-vkZK5htJoiQKTtz4g8hC9QpaF2eYwDInqzjCw_amxxUqxwfefNrYT3GwOFmW5k30jhQdQ9VKbdPcf4'/>
+    src={Logo} />
    </a>
     
   );
 
   const Header =() =>{
+   const[isLoggedIn,setIsLoggedIn]=useState(false);
+
     return (
       <div className='header'>
         <Title />
-       
         <div className='nav-items'>
         <ul>
           <li>Home</li>
@@ -23,6 +28,10 @@
           <li>Cart</li>
         </ul>
        </div>
+       {
+          (isLoggedIn ?  <button onClick={()=> setIsLoggedIn(false)}>Logout</button> :<button onClick={()=> setIsLoggedIn(true)}>Login</button>)
+       }
+      
       </div>
     );
   }

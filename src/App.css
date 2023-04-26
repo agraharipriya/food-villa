@@ -55,8 +55,9 @@
   padding:10px ;
 }
 .logo{
-  width:90px;
-  height: 90px;
+  width:170px;
+  height: 70px;
+  
 }
 
 .card{
@@ -72,4 +73,11 @@
 .restaurant-list{
   display: flex;
   flex-wrap: wrap;
+}
+
+.shimmer-card{
+  width: 200px;
+  height: 270px;
+  background-color: lightgray;
+  margin: 20px;
 }
