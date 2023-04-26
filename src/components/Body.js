@@ -1,57 +1,45 @@
-
 import Restrauntcard from "./Restrauntcard";
-import { restrauntList } from "../config"; 
+import { FETCH_RESTAURANT_URL} from "../config"; 
 import {useState, useEffect} from 'react';
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/Helper";
+import useOnline from "../utils/useOnline";
 
-
-
-function filterData(searchText,restaurants){
-  const filterData= restaurants.filter((restaurant)=>
-   restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-   );
-
-   return filterData;
-}
 
 const Body =()=>{
-
    // Avoid rendering a component
-
    const [filteredRestaurants,setFilteredRestaurants]=useState([]);
    const [allRestaurants,setAllRestaurants]=useState([]);
     const [searchText,setSearchText]=useState("");
 
-   //  empty dependency array => once after render
-   // dep array [searchText] => once after render + everytime after render (my serachText changes )
     useEffect(()=>{
       // api call after render
      getRestaurants(); 
     },[]);
    
     async function getRestaurants(){
-      const data =await fetch(
-         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.7834173&lng=78.999776&page_type=DESKTOP_WEB_LISTING"  
-         );
+      const data =await fetch(FETCH_RESTAURANT_URL );
       const json=await data.json();
-      console.log(json);
       // optional chaining  
-     
       setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards); 
       setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards); 
     }
-    console.log("render")
+
+    const isOnline=useOnline();
+
+     if(!isOnline){
+      return <h1>🔴Offline, please check your internet connection!!</h1>
+     }
+
      //  conditional rendering
    // if restaurants is empty=> shimmer ui
-   // if restaurant has data => actual data ui
      if(!allRestaurants) return null;
 
     return allRestaurants?.length === 0   ? (<Shimmer/> ):
     (
       <>
         <div className="search-container">
-        
            <input type="text" 
             className="search-input"
             placeholder="Search" 

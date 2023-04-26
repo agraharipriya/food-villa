@@ -1,7 +1,7 @@
 
 import './App.css';
 import './components/Shimmer.css'
-import React from 'react';
+import React ,{lazy,Suspense} from 'react';
 import  ReactDOM  from 'react-dom/client';
 import Footer from './components/Footer'
 import Body from './components/Body';
@@ -11,10 +11,14 @@ import { createBrowserRouter ,RouterProvider,Outlet} from 'react-router-dom';
 import Error from './components/Error';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
+import Shimmer from './components/Shimmer';
 import RestaurantMenu from './components/RestaurantMenu';
 import Profile from './components/Profile';
+// import Instamart from './components/Instamart';
+// lazy loading,dynamic import ,on demand loading,code splitting,bundle chunking ;
+const Instamart=lazy(()=>import("./components/Instamart"));
 
-function  App(){ 
+const   App = ()=> { 
   return (
     <>
        <Header/>
@@ -55,6 +59,14 @@ const appRouter=createBrowserRouter([
       {
         path:"/restaurant/:id",
         element:<RestaurantMenu/>,
+      },
+      {
+        path:"/instamart",
+        element:(
+          <Suspense fallback={<Shimmer/>}>
+            <Instamart/>
+          </Suspense>
+        ),
       },
     ],
   },
