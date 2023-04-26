@@ -6,7 +6,7 @@ import  ReactDOM  from 'react-dom/client';
 import Footer from './components/Footer'
 import Body from './components/Body';
 import  Header from './components/Header';
-import About from './components/About';
+// import About from './components/About';
 import { createBrowserRouter ,RouterProvider,Outlet} from 'react-router-dom';
 import Error from './components/Error';
 import Contact from './components/Contact';
@@ -17,6 +17,7 @@ import Profile from './components/Profile';
 // import Instamart from './components/Instamart';
 // lazy loading,dynamic import ,on demand loading,code splitting,bundle chunking ;
 const Instamart=lazy(()=>import("./components/Instamart"));
+const About= lazy(() => import("./components/About"));
 
 const   App = ()=> { 
   return (
@@ -40,13 +41,16 @@ const appRouter=createBrowserRouter([
       },
         {
           path:"/about",
-          element:<About/>,
+          element:(
+          <Suspense fallback={<h1>Loading....</h1>}>
+          <About/>
+          </Suspense>),
           children:[
             {
               path:"profile",
               element:<Profile/>
-            }
-          ]
+            },
+          ],
         },
         {
           path:"/contact",
