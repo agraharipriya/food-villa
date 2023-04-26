@@ -3,6 +3,7 @@ import Restrauntcard from "./Restrauntcard";
 import { restrauntList } from "../config"; 
 import {useState, useEffect} from 'react';
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -31,7 +32,7 @@ const Body =()=>{
    
     async function getRestaurants(){
       const data =await fetch(
-         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"  
+         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.7834173&lng=78.999776&page_type=DESKTOP_WEB_LISTING"  
          );
       const json=await data.json();
       console.log(json);
@@ -46,16 +47,17 @@ const Body =()=>{
    // if restaurant has data => actual data ui
      if(!allRestaurants) return null;
 
-    return (allRestaurants?.length === 0 )  ? (<Shimmer/> ):
+    return allRestaurants?.length === 0   ? (<Shimmer/> ):
     (
       <>
         <div className="search-container">
         
            <input type="text" 
             className="search-input"
-            placeholder="search" 
+            placeholder="Search" 
             value={searchText}
-            onChange={(e) => setSearchText (e.target.value)}
+            onChange={(e) => {setSearchText (e.target.value);
+            }}
            >
            </input>
 
@@ -75,7 +77,11 @@ const Body =()=>{
   {/* no key <<<< index key (use ONLY if you dont have anything ) <<< uniquie key (best practice) */}
 
      {filteredRestaurants.map((restaurant) =>{
-        return <Restrauntcard {...restaurant.data} key={restaurant.data.id} />
+        return(
+         <Link to={"/restaurant/" + restaurant?.data?.id } 
+           key={restaurant?.data?.id}>
+        <Restrauntcard {...restaurant?.data} />
+        </Link>) ;
       }) }  
      </div>
      </>
