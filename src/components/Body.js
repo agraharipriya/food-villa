@@ -8,7 +8,7 @@ import useOnline from "../utils/useOnline";
 import Icon from "../assets/img/Screenshot 2023-04-29 154322.png"
 
 
-const Body =()=>{
+const Body =({user})=>{
    // Avoid rendering a component
    const [filteredRestaurants,setFilteredRestaurants]=useState([]);
    const [allRestaurants,setAllRestaurants]=useState([]);
@@ -76,7 +76,7 @@ const Body =()=>{
         return(
          <Link to={"/restaurant/" + restaurant?.data?.id } 
            key={restaurant?.data?.id}>
-        <Restrauntcard {...restaurant?.data}  />
+        <Restrauntcard {...restaurant?.data} user={user}  />
         </Link>
         ) ;
       }) }  

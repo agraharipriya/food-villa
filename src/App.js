@@ -2,7 +2,7 @@
 // import './App.css';
 import "./index.css";
 // import './components/Shimmer.css'
-import React ,{lazy,Suspense} from 'react';
+import React ,{lazy,Suspense, useState} from 'react';
 import  ReactDOM  from 'react-dom/client';
 import Footer from './components/Footer'
 import Body from './components/Body';
@@ -20,7 +20,11 @@ import Profile from './components/Profile';
 const Instamart=lazy(()=>import("./components/Instamart"));
 const About= lazy(() => import("./components/About"));
 
-const   App = ()=> { 
+const   App = ()=> {
+  const [user,setUser] =useState({
+    name:"4*",
+    email:"agpriya@gmail.com",
+  });
   return (
     <>
        <Header/>
@@ -38,7 +42,12 @@ const appRouter=createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Body/>,
+        element:<Body user={
+          {
+            name:"4⋆",
+            email:"agpriyagmail.com"
+          }
+        }/>,
       },
         {
           path:"/about",

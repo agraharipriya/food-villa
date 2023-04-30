@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom';
  const About = () => {
   return (
     <>
-      <div className="about-us flex flex-col gap-5 text-lg my-5 justify-center items-center bg-orange-500 w-full h-screen">
-        
+      <div className="  text-center flex flex-col text-lg border rounded-lg w-[900px]  bg-orange-300  justify-center items-center mx-auto mt-12 gap-5 mb-12">
+        <h1 className='text-5xl font-bold mt-8 '> About Us</h1>
         <p>
           Welcome to our food delivery app! Our mission is to provide fresh and
           delicious meals to our customers in the most convenient way possible.
@@ -19,7 +19,7 @@ import { Outlet } from 'react-router-dom';
           organic farms whenever possible, and we never use artificial
           preservatives or additives.
         </p>
-        <p>
+        <p className='mb-8'>
           Whether you're looking for a quick and easy lunch, a hearty dinner, or
           a tasty snack, we've got you covered. Browse our menu and place your
           order today!

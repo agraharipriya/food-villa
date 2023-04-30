@@ -9,7 +9,7 @@ const Footer =() =>{
     <h1 className="font-semibold text-2xl">Company</h1>
       <ul className="flex flex-col gap-3">
         <li >About</li>
-        <li>Blog</li>
+        <li>Team</li>
         <li>Careers</li>
         <li>Contact</li>
       </ul>
