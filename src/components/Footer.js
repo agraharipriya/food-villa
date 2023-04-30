@@ -1,74 +1,45 @@
+import { FaInstagram ,FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const Footer =() =>{
     return(
       <>
-      <h1>footer</h1>
-     {/* <div className="footer-cont">
-         
-      
-      <footer class="footer-distributed">
-
-		   	<div class="footer-left">
-
-				  <h3>Food<span>Villa</span></h3>
-
-				  <p class="footer-links">
-					<a href="#" class="link-1">Home</a>
-					
-					<a href="#">Blog</a>
-				
-					<a href="#">Pricing</a>
-				
-					<a href="#">About</a>
-					
-					<a href="#">Faq</a>
-					
-					<a href="#">Contact</a>
-				</p>
-
-				<p class="footer-company-name">FoodVilla © 2023</p>
-			</div>
-
-			<div class="footer-center">
-
-				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>444 S. Swaroop Nagar</span> Kakadeo, Kanpur</p>
-				</div>
-
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>+1.555.555.5555</p>
-				</div>
-
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@foodvilla.com</a></p>
-				</div>
-
-			</div>
-
-			<div class="footer-right">
-
-				<p class="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
-
-				<div class="footer-icons">
-
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-
-				</div>
-
-			</div>
-
-		</footer>
-         
-     </div> */}
+      <div className="flex flex-col bg-black text-white">
+     <div className="flex flex-row justify-evenly my-8 ">
+		<div className="flex flex-col gap-3">
+    <h1 className="font-semibold text-2xl">Company</h1>
+      <ul className="flex flex-col gap-3">
+        <li >About</li>
+        <li>Blog</li>
+        <li>Careers</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div className="flex flex-col gap-3">
+      <h1 className="font-semibold text-2xl">For You</h1>
+      <p>Privacy policy</p>
+      <p>Terms</p>
+      <p>Security</p>
+      <p>Sitemap</p>
+    </div>
+    <div className="flex flex-col gap-3 ">
+      <h1 className="font-semibold text-2xl">Social Links</h1>
+     <ul className="flex flex-row gap-5" >
+     <FaInstagram/>
+      <FaFacebook/>
+      <FaLinkedin/>
+     
+     </ul>
+     
+    </div>
+  
+	 </div>
+   <div className="h-1 bg-white m-5 p-0"></div>
+   <div className="flex flex-col justify-around items-center p-9 ">
+    <p className="">By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. </p>
+    <p>  © 2023 Swiggy Ltd. All rights reserved.</p>
+  
+    </div>
+   </div>
   </>
 
     );

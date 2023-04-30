@@ -1,6 +1,7 @@
 
-import './App.css';
-import './components/Shimmer.css'
+// import './App.css';
+import "./index.css";
+// import './components/Shimmer.css'
 import React ,{lazy,Suspense} from 'react';
 import  ReactDOM  from 'react-dom/client';
 import Footer from './components/Footer'
@@ -42,7 +43,7 @@ const appRouter=createBrowserRouter([
         {
           path:"/about",
           element:(
-          <Suspense fallback={<h1>Loading....</h1>}>
+           <Suspense fallback={<h1>Loading....</h1>}>
           <About/>
           </Suspense>),
           children:[

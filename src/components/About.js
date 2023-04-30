@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom';
  const About = () => {
   return (
     <>
-      <div className="about-us">
-        <h1>About Us</h1>
+      <div className="about-us flex flex-col gap-5 text-lg my-5 justify-center items-center bg-orange-500 w-full h-screen">
+        
         <p>
           Welcome to our food delivery app! Our mission is to provide fresh and
           delicious meals to our customers in the most convenient way possible.

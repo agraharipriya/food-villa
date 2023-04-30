@@ -6,7 +6,9 @@ const useRestaurant=(id)=>{
 
     //  get data from API      
    useEffect(()=>{
+
     getRestaurantInfo();
+    
    },[]) ;
 
    async function getRestaurantInfo(){
