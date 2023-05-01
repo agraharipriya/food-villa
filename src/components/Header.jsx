@@ -33,7 +33,7 @@ import UserContext from "../utils/UserContext";
         </ul>
        </div>
        {/* <h1 className="p-10 font-bold lg:mt-0 text-orange-600 text-xl">{user.name}</h1>   */}
-       <h1 className="lg:mt-0" >{isOnline ? "🟢" : "🔴"}</h1>
+       <h1 className="lg:mt-0 cursor-pointer" >{isOnline ? "🟢" : "🔴"}</h1>
       
        {
           (isLoggedIn ?  
