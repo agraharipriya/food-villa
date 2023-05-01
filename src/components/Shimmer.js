@@ -1,6 +1,4 @@
-// import './Shimmer.css'
 
-import { IMG_CDN_URL } from '../config';
 const Shimmer =({
     name, 
     cuisines,

@@ -31,6 +31,7 @@ const   App = ()=> {
   return (
     <UserContext.Provider value={{
       user:user,
+      setUser:setUser,
     }}>
        <Header/>
        <Outlet/>
