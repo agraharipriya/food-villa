@@ -15,6 +15,7 @@ import Cart from './components/Cart';
 import Shimmer from './components/Shimmer';
 import RestaurantMenu from './components/RestaurantMenu';
 import Profile from './components/Profile';
+import UserContext from "./utils/UserContext";
 // import Instamart from './components/Instamart';
 // lazy loading,dynamic import ,on demand loading,code splitting,bundle chunking ;
 const Instamart=lazy(()=>import("./components/Instamart"));
@@ -25,12 +26,16 @@ const   App = ()=> {
     name:"4*",
     email:"agpriya@gmail.com",
   });
+
+  
   return (
-    <>
+    <UserContext.Provider value={{
+      user:user,
+    }}>
        <Header/>
        <Outlet/>
        <Footer/>
-    </>
+    </UserContext.Provider>
   );
 }
 
