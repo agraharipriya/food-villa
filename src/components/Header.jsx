@@ -37,8 +37,8 @@ import UserContext from "../utils/UserContext";
       
        {
           (isLoggedIn ?  
-          (<button onClick={()=> setIsLoggedIn(false)} className="rounded lg:mt-0 text-xl font-semibold m-5 p-5 hover:text-orange-500">Logout</button>) :
-          <button onClick={()=> setIsLoggedIn(true)} className="font-semibold  lg:mt-0 text-xl rounded m-5 p-5 hover:text-orange-500">Login</button>)
+          (<button onClick={()=> setIsLoggedIn(false)} className="rounded lg:mt-0 text-xl font-semibold m-5 p-5 hover:text-orange-500 sm:hidden">Logout</button>) :
+          <button onClick={()=> setIsLoggedIn(true)} className="font-semibold  lg:mt-0 text-xl rounded m-5 p-5 hover:text-orange-500 sm:hidden">Login</button>)
        }
       
       </div>

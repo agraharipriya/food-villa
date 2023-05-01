@@ -47,23 +47,23 @@ const Cart = () => {
   return (
     <div className="add-to-cart-page flex flex-grow py-4 justify-between items-start p-5 gap-5">
       <h2 className='font-bold text-center text-xl'>Menu</h2>
-      <div className="menu-items grid grid-cols-2 gap-2 mt-2 p-5">
+      <div className="menu-items grid grid-cols-2 gap-2 mt-2 p-5 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xs:grid-cols-1">
         {menuItems.map((item) => (
-          <div className="menu-item flex flex-col bg-slate-100 p-5 rounded-md shadow-lg gap-6 w-[400px]" key={item.id}>
+          <div className="menu-item flex flex-col bg-slate-100 p-5 rounded-md shadow-lg gap-6 w-[400px] sm:w-60 md:w-96" key={item.id}>
             <h3 className='text-lg font-semibold'>{item.name}</h3>
             <p>Price: ${item.price}</p>
             <button onClick={() => handleAddToCart(item, 1)} className='p-2 bg-green-500 text-white rounded-md cursor-pointer hover:bg-green-600'>Add to Cart</button>
           </div>
         ))}
       </div>
-      <div className="cart w-4/12 flex  flex-col  justify-start">
+      <div className="cart w-4/12 flex  flex-col  justify-start sm:flex-1 ">
         <h2 className='font-bold text-xl'>Cart</h2>
         {cart.length === 0 ? (
           <p className='m-0 text-lg font-semibold'>Your cart is empty</p>
         ) : (
           <div>
             {cart.map((item) => (
-              <div className="cart-item flex justify-between items-center p-3 border-b-2" key={item.id}>
+              <div className="cart-item flex justify-between items-center p-3 border-b-2 sm:flex-1 " key={item.id}>
                 <p className='m-0 text-lg'>{item.name} x {item.quantity}</p>
                 <button onClick={() => handleRemoveFromCart(item)} className='p-2 bg-green-500 text-white rounded-md cursor-pointer hover:bg-green-600'>Remove</button>
               </div>

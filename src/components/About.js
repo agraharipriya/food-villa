@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom';
  const About = () => {
   return (
     <>
-      <div className="  text-center flex flex-col text-lg border rounded-lg w-[900px]  bg-orange-300  justify-center items-center mx-auto mt-12 gap-5 mb-12">
+      <div className="  text-center flex flex-col text-lg border rounded-lg w-[900px]  bg-orange-300  justify-center items-center mx-auto mt-12 gap-5 mb-12 sm:w-96 md:w-[500px] sm:flex-1 sm:flex-wrap overflow-hidden sm:overflow-y-hidden ">
         <h1 className='text-5xl font-bold mt-8 '> About Us</h1>
-        <p>
+        <p className='overflow-x-hidden'>
           Welcome to our food delivery app! Our mission is to provide fresh and
           delicious meals to our customers in the most convenient way possible.
           We believe that everyone deserves access to healthy and flavorful
